@@ -19,8 +19,16 @@ for i in range(0, len(tracks)):
     author = track.artists[0].name
     album = track.albums[0].title
     print(title, "by", author, "by album" , album)
-    track.download("download/" + name + ".mp3", "mp3", 320)
-    track.downloadCover("cover.jpg", '800x800')
+
+    try:
+        track.download("download/" + name + ".mp3", "mp3", 320)
+    except:
+        track.download("download/" + name + ".mp3", "mp3")
+    
+    try:
+        track.downloadCover("cover.jpg", '800x800')
+    except:
+        track.downloadCover("cover.jpg")
 
     tags = ID3()
     tags["TIT2"] = TIT2(encoding=3, text=[title])

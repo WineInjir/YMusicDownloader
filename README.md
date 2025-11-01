@@ -10,4 +10,4 @@ https://github.com/MarshalX/yandex-music-api
 Вставить токен в api.key и запустить run.sh
 
 # windows
-coming soon
+Вставить токен в api.key и запустить run.bat

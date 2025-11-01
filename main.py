@@ -15,10 +15,11 @@ tracks = client.users_likes_tracks()
 for i in range(0, len(tracks)):
     track = tracks[i].fetchTrack()
     title = track.title
+    name = title.replace("/", "|")
     author = track.artists[0].name
     album = track.albums[0].title
     print(title, "by", author, "by album" , album)
-    track.download("download/" + title + ".mp3", "mp3", 192)
+    track.download("download/" + name + ".mp3", "mp3", 192)
     track.downloadCover("cover.jpg")
 
     tags = ID3()
@@ -34,4 +35,4 @@ for i in range(0, len(tracks)):
             data=f.read()
        )
        
-    tags.save("download/" + title + ".mp3")
+    tags.save("download/" + name + ".mp3")

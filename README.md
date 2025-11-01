@@ -1,5 +1,5 @@
 # YMusicDownloader
-python приложения для скачивания музыки  и плейлистов с сервиса Я.Музыка
+python приложения для скачивания плейлиста "понравившиейся" с сервиса Я.Музыка
 
 Получение токена - https://yandex-music.readthedocs.io/en/main/token.html
 

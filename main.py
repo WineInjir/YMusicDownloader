@@ -15,12 +15,12 @@ tracks = client.users_likes_tracks()
 for i in range(0, len(tracks)):
     track = tracks[i].fetchTrack()
     title = track.title
-    name = title.replace("/", "|")
+    name = title.replace("/", "-")
     author = track.artists[0].name
     album = track.albums[0].title
     print(title, "by", author, "by album" , album)
     track.download("download/" + name + ".mp3", "mp3", 192)
-    track.downloadCover("cover.jpg")
+    track.downloadCover("cover.jpg", '400x400')
 
     tags = ID3()
     tags["TIT2"] = TIT2(encoding=3, text=[title])

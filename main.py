@@ -1,11 +1,16 @@
 print("main.py started, initializing libraries...")
 
+import configparser
+
+config = configparser.ConfigParser()
+config.read("config.ini")
+key = config["Yandex"]["key"]
+
 from yandex_music import Client 
 from mutagen.mp3 import MP3
 from mutagen.id3 import ID3, TIT2, TPE1, TALB, TDRC, TRCK, APIC
 
-with open("api.key") as f:
-    key = f.read()
+import telebot
 
 print("initializing yandex api")
 client = Client(key).init()

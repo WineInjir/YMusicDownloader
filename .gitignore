@@ -2,6 +2,7 @@
 cover.jpg
 api.key
 download/
+config.ini
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -210,3 +211,4 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+config.ini

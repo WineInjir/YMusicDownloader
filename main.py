@@ -41,15 +41,16 @@ for i in range(0, len(tracks)):
     time.sleep(0.5)
 
     qlist = list()
-    tmp = 0
+    codecs = list()
     for i in range(len(info)):
         qlist.append(info[i].bitrate_in_kbps)
-    quality = int(max(qlist))
+        codecs.append(info[i].codec)
+    quality = int(max(qlist))   
 
     succes = False
     while succes != True:
         try:
-            track.download("download/" + name + ".mp3", "mp3",  quality)
+            track.download("download/" + name + ".mp3", "mp3", quality)
             time.sleep(0.5)
 
             track.downloadCover("cover.jpg", '800x800')
@@ -76,4 +77,4 @@ for i in range(0, len(tracks)):
        )
     tags.save("download/" + name + ".mp3")
     
-    print("Downloaded",title, "by", author, "by album" , album, "quality:", quality)
+    print("Downloaded",title, "by", author, "by album" , album, "quality:", quality, "codecs:", codecs)
